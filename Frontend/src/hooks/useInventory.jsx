@@ -9,7 +9,7 @@ const useInventory = () => {
         .then(res => res.json())
         .then(data => setInventory(data))
         .catch(error => setError(error.message))
-    })
+    },[])
     return (
         inventory
     )
