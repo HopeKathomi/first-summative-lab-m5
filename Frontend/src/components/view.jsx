@@ -3,17 +3,17 @@ import useInventory from '../hooks/useInventory'
 const View = () => {
   let inventory = useInventory()
   return (
-    <div>
-        <div className="flex flex-col justify-center items-center bg-gray-200 min-h-screen">
+    <div className="flex flex-col justify-center items-center pb-8 w-full">
+      <div className="flex flex-col justify-center items-center w-3/4 p-5 rounded">
 
-        <div className="bg-blue-500 w-3/4 h-20">
+        <div className="bg-blue-500 h-10 w-full">
           top
         </div>
 
-        <div className="w-3/4 h-20">
+        <div className='pb-8 w-full'>
           <table className='w-full'>
             <thead>
-              <tr>
+              <tr className="text-left">
                 <th>ITEM</th>
                 <th>CATEGORY</th>
                 <th>SUPPLIER</th>
@@ -24,11 +24,11 @@ const View = () => {
               {
                 inventory.map(items => {
                   return(
-                    <tr>
-                      <td>{items.name}</td>
-                      <td>{items.category}</td>
-                      <td>{items.supplier_id}</td>
-                      <td>{items.price}</td>
+                    <tr key={items.id} className='border-gray-100 border-b-1 last: border-b-0 py-5 hover:bg-gray-100'>
+                      <td className="py-2">{items.name}</td>
+                      <td className="py-2">{items.category}</td>
+                      <td className="py-2">{items.supplier_id}</td>
+                      <td className="py-2">{items.price}</td>
                     </tr>
                   )
                 })
