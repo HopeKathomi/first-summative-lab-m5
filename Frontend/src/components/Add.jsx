@@ -6,7 +6,7 @@ const Add = ({onClose}) => {
         <div className='bg-white max-w-md rounded-lg p-6 flex flex-col shadow-lg'>
             <div className='flex justify-between'>
                 <p>Add Item</p>
-                <button onClick={onClose}>&times;</button>
+                <button onClick={onClose} className='border border-gray-100 rounded-sm px-2 py-1 hover:border-2 hover:border-red-200'>&times;</button>
             </div>
             <form className='flex flex-col'>
                 <input type="text" placeholder='name' className='border px-3 py-1 my-2 border-gray-100 rounded-lg w-full'/>
