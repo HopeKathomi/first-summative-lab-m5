@@ -21,5 +21,17 @@ def create_table():
     connection.commit()
     connection.close()
 
+def save_database(name, category, price):
+# def save_database():
+    connection = sqlite3.connect("inventory.db")
+    cursor = connection.cursor()
+
+    sql = """ INSERT INTO inventory (name, category, price)
+        VALUES (?, ?, ?)"""
+
+    cursor.execute(sql, (name,category,price))
+    connection.commit()
+    connection.close()
+# save_database()
 # if __name__ == "__main__":
 #     app.run(debug = True)
